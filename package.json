@@ -1,0 +1,37 @@
+{
+  "name": "petfood",
+  "license": "0BSD",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~4.0.1",
+    "@react-native-picker/picker": "2.9.0",
+    "@react-navigation/native": "^7.1.5",
+    "@react-navigation/stack": "^7.2.9",
+    "@types/react": "~18.3.12",
+    "expo": "~52.0.41",
+    "expo-status-bar": "~2.0.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.76.7",
+    "react-native-gesture-handler": "~2.20.2",
+    "react-native-radio-buttons-group": "^3.1.0",
+    "react-native-reanimated": "~3.16.1",
+    "react-native-safe-area-context": "4.12.0",
+    "react-native-safe-area-view": "^1.1.1",
+    "react-native-web": "~0.19.13",
+    "react-navigation": "^5.0.0",
+    "react-navigation-stack": "^2.10.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@react-native-community/cli": "latest"
+  },
+  "private": true
+}
