@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     nome_completo VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    cpf VARCHAR(14) NOT NULL UNIQUE,
+    cpf VARCHAR(14),
     telefone VARCHAR(20),
     cep VARCHAR(10),
     rua VARCHAR(100),
@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     cidade VARCHAR(100),
     estado VARCHAR(2)
 );
+
 
 CREATE TABLE IF NOT EXISTS pets (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -74,4 +75,3 @@ CREATE TABLE IF NOT EXISTS carteira_dogecoin (
     valor_em_reais DECIMAL(10,2),
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
-
