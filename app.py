@@ -1,16 +1,26 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import mysql.connector
+from mysql.connector import Error
+import time
 
 app = Flask(__name__)
 CORS(app)
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="q1w2e3r4",
-    database="petfood"
-)
+for _ in range(10):
+    try:
+        db = mysql.connector.connect(
+            host="database",
+            user="root",
+            password="q1w2e3r4",
+            database="petfood"
+        )
+        print("Conexão estabelecida com sucesso!")
+        break
+    except Error as e:
+        print("Erro ao conectar, tentando novamente em 3s...", e)
+        time.sleep(3)
+
 cursor = db.cursor(dictionary=True)
 
 
@@ -91,6 +101,7 @@ def user_pets(user_id):
         return jsonify(pets)
     else:
         body = request.get_json()
+        print("Body recebido:", body)
         cursor.execute(
             "INSERT INTO pets (usuario_id, nome, tipo, raca, data_nascimento, sexo, nivel_atividade) VALUES (%s, %s, %s, %s, %s, %s, %s)",
             (
@@ -166,4 +177,4 @@ def get_wallet(user_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
