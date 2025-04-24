@@ -12,9 +12,9 @@ import {
 import { Picker } from "@react-native-picker/picker";
 import RadioGroup from "react-native-radio-buttons-group";
 import styles from "./Styles";
-//import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-export default function PetProfile() {
+export default function PetProfile({ navigation }) {
   const radioButtonsAnimal = useMemo(
     () => [
       {
@@ -71,8 +71,8 @@ export default function PetProfile() {
       <TextInput
         style={styles.inputSmall}
         placeholder="Nome"
-        //value={PetName}
-        //onChangeText={setPetName}
+        value={PetName}
+        onChangeText={setPetName}
       />
 
       <RadioGroup
@@ -84,8 +84,8 @@ export default function PetProfile() {
       />
 
       <Picker
-        //selectedValue={categoria}
-        //onValueChange={(itemValue) => setCategoria(itemValue)}
+        selectedValue={categoria}
+        onValueChange={(itemValue) => setCategoria(itemValue)}
         style={styles.picker}
       >
         <Picker.Item label="Raça - Selecione" value="" />
@@ -103,8 +103,8 @@ export default function PetProfile() {
       <TextInput
         style={styles.inputSmall}
         placeholder="Data nascimento dd/mm/aaaa"
-        //value={email}
-        //onChangeText={setEmail}
+        value={email}
+        onChangeText={setEmail}
       />
       <RadioGroup
         containerStyle={styles.radio}
@@ -114,8 +114,8 @@ export default function PetProfile() {
         layout="row"
       />
       <Picker
-        //selectedValue={categoria}
-        //onValueChange={(itemValue) => setCategoria(itemValue)}
+        selectedValue={categoria}
+        onValueChange={(itemValue) => setCategoria(itemValue)}
         style={styles.picker}
       >
         <Picker.Item label="Nível de Atividade" value="" />
@@ -124,19 +124,15 @@ export default function PetProfile() {
         <Picker.Item label="Alto" value="Alto" />
       </Picker>
 
-      <TextInput
-        style={styles.inputSmall}
-        placeholder="Doenças -->"
-        //value={Doencas}
-        //onChangeText={setDoencas}
-      />
+      <TouchableOpacity style={styles.inputsmall}>
+        onPress={() => navigation.navigate("PetDoencas")}
+        <Text style={styles.buttonText}>Doenças</Text>
+      </TouchableOpacity>
 
-      <TextInput
-        style={styles.inputSmall}
-        placeholder="Preferências e alergias -->"
-        //value={PetPrefs}
-        //onChangeText={setPetPrefs}
-      />
+      <TouchableOpacity style={styles.inputsmall}>
+        onPress={() => navigation.navigate("PetPrefs")}
+        <Text style={styles.buttonText}>Preferências e Alergias</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Salvar</Text>

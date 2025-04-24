@@ -44,7 +44,7 @@ export default function Login() {
 
       if (response.status === 200) {
         Alert.alert("Sucesso", "Login bem-sucedido!");
-        navigation.navigate("MeuPerfil", { username });
+        navigation.navigate("UserProfile", { username });
       } else {
         Alert.alert("Erro", data.erro || "Erro ao tentar fazer login.");
       }

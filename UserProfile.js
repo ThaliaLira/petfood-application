@@ -178,8 +178,8 @@ const UserProfile = () => {
 
       Alert.alert(
         "Sucesso",
-        "Dados salvos com sucesso! Redirecionando para Doar ou Receber",
-        [{ text: "OK", onPress: () => navigation.navigate("DoarOuReceber") }]
+        "Dados salvos com sucesso! Redirecionando para PetList",
+        [{ text: "OK", onPress: () => navigation.navigate("PetList") }]
       );
     } catch (error) {
       console.error("Erro de conexão:", error);

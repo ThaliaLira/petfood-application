@@ -9,14 +9,14 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { Picker } from "@react-native-picker/picker";
-import RadioGroup from "react-native-radio-buttons-group";
 import styles from "./Styles";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
-const PetDoencas = () => {
+const PetDoencas = ({ navigation }) => {
   const [diabetes, setDiabetes] = useState(false);
   const [obesidade, setObesidade] = useState(false);
+  const [gastro, setGastro] = useState(false);
+  const [renais, setRenais] = useState(false);
 
   return (
     <View style={styles.scrollView}>
@@ -30,13 +30,27 @@ const PetDoencas = () => {
           <Text>Diabetes</Text>
           <Switch value={diabetes} onValueChange={setDiabetes} />
         </View>
+
         <View style={styles.switchContainer}>
           <Text>Obesidade</Text>
           <Switch value={obesidade} onValueChange={setObesidade} />
         </View>
       </View>
 
-      <TouchableOpacity style={styles.button}>
+      <View style={styles.switchContainer}>
+        <Text>Problemas Gastrointestinais</Text>
+        <Switch value={gastro} onValueChange={setGastro} />
+      </View>
+
+      <View style={styles.switchContainer}>
+        <Text>Problemas Renais</Text>
+        <Switch value={renais} onValueChange={setRenais} />
+      </View>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("PetProfile")}
+      >
         <Text style={styles.buttonText}>Salvar</Text>
       </TouchableOpacity>
     </View>
