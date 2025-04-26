@@ -11,7 +11,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     if (!username || !senha) {
-      alert("Erro", "Por favor, preencha todos os campos.");
+      Alert.alert("Erro", "Por favor, preencha todos os campos.");
       return;
     }
 
