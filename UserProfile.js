@@ -47,7 +47,7 @@ const UserProfile = () => {
           onPress: async () => {
             try {
               const response = await fetch(
-                `http://localhost:8081/perfil?username=${username}`,
+                `http://localhost:5000/perfil?username=${username}`,
                 {
                   method: "DELETE",
                 }
@@ -79,7 +79,7 @@ const UserProfile = () => {
   const carregarDadosPerfil = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8081/perfil?username=${username}`
+        `http://localhost:5000/perfil?username=${username}`
       );
       if (!response.ok) {
         throw new Error(`Erro ao buscar os dados: ${response.statusText}`);
@@ -160,7 +160,7 @@ const UserProfile = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8081/perfil?username=${username}`,
+        `http://localhost:5000/perfil?username=${username}`,
         {
           method: "PUT",
           headers: {
