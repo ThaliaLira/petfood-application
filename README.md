@@ -1,3 +1,5 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/ThaliaLira/petfood-application)
+
 # 🐾 PetFood - Alimentação Saudável para Seu Pet
 
 ## 📌 Sobre
