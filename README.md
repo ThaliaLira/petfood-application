@@ -130,3 +130,4 @@ PetFood é mais que um app – é uma solução completa que une **tecnologia, n
 - PostgreSQL / Firebase (Banco de Dados)
 - API de pagamentos com Bitcoin
 - Docker, CI/CD etc.
+
