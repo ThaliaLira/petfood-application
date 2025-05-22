@@ -6,6 +6,14 @@
 
 PetFood é um aplicativo desenvolvido para ajudar tutores a encontrar e personalizar refeições saudáveis para seus pets. Com opções naturais e balanceadas, garantimos que seu animal receba a melhor nutrição possível.
 
+
+## 🎥 Apresentação
+
+[![Assista ao vídeo no YouTube](https://img.youtube.com/vi/3JlcyJiyp7U/hqdefault.jpg)](https://youtu.be/3JlcyJiyp7U)
+
+> Clique na imagem ou [assista diretamente no YouTube](https://youtu.be/3JlcyJiyp7U).
+
+
 ## Landing Page
 
 https://thalialira.github.io/petfood--langing-page/
